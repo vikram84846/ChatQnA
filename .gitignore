@@ -1,0 +1,5 @@
+.env
+doc-reader.ipynb
+__pycache__
+chatqna-74179-firebase-adminsdk-fbsvc-12dfd8ac71.json
+auth.py
