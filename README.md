@@ -15,26 +15,34 @@ cd pdf-qna
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
+
 # 🔐 Environment Variables
- ### Before running the project, you must create a .env file in the root directory with the following keys:
+
+### Before running the project, you must create a .env file in the root directory with the following keys:
+
 ```bash
 GOOGLE_API_KEY=your_google_gemini_api_key
-OPENAI_API_KEY=your_openrouter_api_key
+
 ```
 
 # 📦 Install Dependencies
+
 Install all required packages using uv:
+
 ```bash
 uv pip install -r requirements.txt
 ```
 
 # 🧠 Run the Application
+
 Start the FastAPI server with:
+
 ```bash
 uvicorn main:app --reload
 ```
 
 # 📁 Features
+
 Upload PDF documents
 
 Automatically summarize content
