@@ -19,3 +19,5 @@ source .venv/bin/activate
 # 4. Install dependencies
 echo "Installing dependencies with uv..."
 uv sync
+
+
