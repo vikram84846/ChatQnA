@@ -15,11 +15,15 @@ const PDFViewer = ({ fileUrl, file }) => {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/uploadPdf", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const res = await axios.post(
+        "https://chatqna.onrender.com/uploadPdf",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       setUploadStatus("File uploaded successfully!");
       return res.data;
@@ -60,4 +64,3 @@ const PDFViewer = ({ fileUrl, file }) => {
 };
 
 export default PDFViewer;
-

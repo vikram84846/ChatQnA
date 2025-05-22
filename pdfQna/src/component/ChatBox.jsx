@@ -29,7 +29,7 @@ const ChatBox = ({ file }) => {
         file: file.name, // Use the file name
         query: input,
       };
-      const res = await axios.get("http://127.0.0.1:8000/askpdf", { params });
+      const res = await axios.get("https://chatqna.onrender.com/askpdf", { params });
       setMessages((prev) => [
         ...prev,
         { sender: "ai", text: res.data?.answer || "No answer received." },
