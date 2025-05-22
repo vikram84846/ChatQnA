@@ -1,16 +1,14 @@
 #!/bin/bash
-
-# Exit on error
 set -e
 
-# 1. Install uv (if not already installed)
+# Add uv to PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# 1. Install uv
 echo "Installing uv..."
 curl -Ls https://astral.sh/uv/install.sh | bash
 
-# Add uv to PATH (modify this path if needed based on where uv is installed)
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# 2. Set up virtual environment (called `.venv` here)
+# 2. Create virtual environment
 echo "Creating virtual environment..."
 uv venv .venv
 
@@ -18,10 +16,6 @@ uv venv .venv
 echo "Activating virtual environment..."
 source .venv/bin/activate
 
-# 4. Install dependencies using uv sync
-echo "Syncing dependencies from pyproject.toml..."
+# 4. Install dependencies
+echo "Installing dependencies with uv..."
 uv sync
-
-# 5. Run FastAPI app using uvicorn
-echo "Starting FastAPI app..."
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
