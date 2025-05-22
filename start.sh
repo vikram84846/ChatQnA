@@ -22,6 +22,3 @@ source .venv/bin/activate
 echo "Syncing dependencies from pyproject.toml..."
 uv sync
 
-# 5. Run FastAPI app using uvicorn
-echo "Starting FastAPI app..."
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
